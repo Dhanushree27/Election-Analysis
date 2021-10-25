@@ -50,6 +50,7 @@ The calculation of percentage for each county required iterating through each co
 - Determine the votes for each county
 - Iterate through each county and divide the individual vote by total votes 
 
+```
  for county_name in county_list:
 
         # Retrieving the county vote count.
@@ -61,18 +62,18 @@ The calculation of percentage for each county required iterating through each co
         print(f"{county_name}: {county_percentage:.1f}% ({county_vote:,})")
         # Saving the county votes to a text file.
         txt_file.write(f"{county_name}: {county_percentage:.1f}% ({county_vote:,})\n")
-
+```
 The data was directly written into a file instead of being stored 
 
 ### County with the highest turnout
 The calculation involved looping through each county to check whether its turnout was greater than the previous counties. If so, then it replaced the value of the previous county.
-
+```
 for county_name in county_list:
         # If statement to determine the winning county and get its vote count.
         if county_vote>winning_turnout:
             winning_turnout = county_vote
             winning_county = county_name
-
+```
 ## Challenge Summary
 Based on the output from the script, it can be seen that the code is a good way to summarize election results. It takes into account, both the county and the candidate name and provides a brief summary. This script can be re-used for any election by modifying a few parameters. The reference file can be modified to reflect the kind of election data being analysed. This code can also be adapted for a more detailed analysis and also for different kinds of elections with a few modifications:
 
